@@ -2,17 +2,18 @@
 
 function executar() {
 
-    const fill0 = tf.fill([1], 0);
-    const fill1 = tf.fill([2,2], 1);
-    const fill2 = tf.fill([2,2], 2);
+    let saida = '';
 
-    const zeros1 = tf.zeros([1]);
-    const zeros2 = tf.zeros([2, 2]);
+    const tensor1d =  tf.tensor([1.5]);
+    const asScalar =  tensor1d.asScalar();
 
-    const linspace = tf.linspace( 0, 9, 10 );
+    const tensor2d = tf.tensor([1,2,3,4], [2,2]);
+    const flatten = tensor2d.flatten();
 
-    const range = tf.range( 1 , 10 , 1 )
-
-    document.getElementById("result").innerHTML = range.toString();   
+    saida += 'flatten antes: \n';
+    saida += tensor2d.toString() + '\n';
+    saida += 'depois' + '\n';
+    saida += flatten.toString() + '\n';
+    document.getElementById("result").innerHTML = saida.toString();   
 }
  
