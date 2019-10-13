@@ -19,10 +19,13 @@ function executar() {
     const tensor3 =tf.tensor([ 1,2,3,4], [1, 2, 2, 1] );
     const as3D = tensor3.as3D( 2,2,1 );
 
-    saida += 'as3d antes: \n';
-    saida += tensor3.toString() + '\n';
+    const tensor4 =tf.tensor([ 1.5,2.7,3.6,4.8] );
+    const asType = tensor4.asType( 'int32' );
+
+    saida += 'asType antes: \n';
+    saida += tensor4.toString() + '\n';
     saida += 'depois' + '\n';
-    saida += as3D.toString() + '\n';
+    saida += asType.toString() + '\n';
     document.getElementById("result").innerHTML = saida.toString();   
 
     
